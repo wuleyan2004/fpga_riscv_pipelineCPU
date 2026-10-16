@@ -1,0 +1,65 @@
+{
+  "date": "20261006-134057-890198",
+  "checks_passed": true,
+  "checks": [
+    {
+      "name": "tb_board_inputs",
+      "passed": true
+    },
+    {
+      "name": "tb_board_demo",
+      "passed": true
+    },
+    {
+      "name": "tb_board_rom_consistency",
+      "passed": true
+    },
+    {
+      "name": "pipeline_forward",
+      "passed": true
+    }
+  ],
+  "top": "board_top",
+  "clock_mhz": 27,
+  "source_sha256": {
+    "源代码/cpu/alu.v": "2b33e4fd36d7b65ca34eae1f5f6423bd7d0b156910b1cabafecd8dbe380d35d1",
+    "源代码/cpu/branch_compare.v": "8534d0d6a7550caaa8ff051f0accd8fae74b328f817ed235b828ea8dd9eda7b2",
+    "源代码/cpu/decoder.v": "bf52fa083e218ce0af458e772a22cf74942ceb3d7035b68a0056b80ed6a3ecbc",
+    "源代码/cpu/imm_gen.v": "763b4fa5121bfcb92577f89d4b762c51b95f069b9be2681e89bb6e8fbd33b2c2",
+    "源代码/cpu/regfile.v": "a9d1397cc5a7292212f56bea92267679d8db6e173e03c9b8a2731aee19ae0ed4",
+    "源代码/cpu/cpu_core_pipeline.v": "4f6b489553226c5c22900d06e780f90dba80b602daa6acd8a53dcecf49d58235",
+    "源代码/instruction_rom.v": "4565eae51ed413398fa5c1ddc1355865d5fd2069d47607692aa0925a7e517700",
+    "源代码/sync_data_ram.v": "1b053b249d82156859987c6ffdc9414b636d049be3496f2e7533e10c6b0a940e",
+    "源代码/gpio_mmio.v": "53d0381efdf0b2f73a75bc512778eb0515d547e3bd0f0faf0242601cb5f11c10",
+    "源代码/uart_tx.v": "67ae99f9421d8eda5de197f072c328e996f8a7693a893e29462be6898a118b2a",
+    "源代码/uart_mmio.v": "a08e15bb2b6d9bd1ab8f9811ecb3a7772bb9c35085391e1128c901a29c846a66",
+    "源代码/soc_top.v": "4acedd6d17ecc84c5e975ebf0068b4520c443978a9cd46cce5faa33d79b3b482",
+    "源代码/board_top.v": "12a2a0b82d1b9c2caace35c359d0e9ec4a7154451267319e8756d984b8baaef5",
+    "board_top.fdc": "69c7840e432881ae3b88e2e86e4ce7ed62e322c5e0524d5b5be8d7f8a05b3a1a",
+    "上板测试说明.md": "956443e454c83ef83bbfe99fdcd4aa89b6d5db784a89427acda1e9f820bac8e1",
+    "board_sources.f": "a67ba337717cc5e94f2d966051115853a2bcba8d2e992f2e8d26048cd1423a11",
+    "program.hex": "925ab952f2f1980f2b386fc08a2e0ea1b38ae7d4a5078498bfdcdae1cd8bc188",
+    "board_demo.S": "6f6805fa24037e5de73a65c79490b01c82f732017556f592ba8899279e58454d"
+  },
+  "package_sha256": {
+    "README.md": "956443e454c83ef83bbfe99fdcd4aa89b6d5db784a89427acda1e9f820bac8e1",
+    "board_top.fdc": "69c7840e432881ae3b88e2e86e4ce7ed62e322c5e0524d5b5be8d7f8a05b3a1a",
+    "rtl/alu.v": "2b33e4fd36d7b65ca34eae1f5f6423bd7d0b156910b1cabafecd8dbe380d35d1",
+    "rtl/board_top.v": "12a2a0b82d1b9c2caace35c359d0e9ec4a7154451267319e8756d984b8baaef5",
+    "rtl/branch_compare.v": "8534d0d6a7550caaa8ff051f0accd8fae74b328f817ed235b828ea8dd9eda7b2",
+    "rtl/cpu_core_pipeline.v": "4f6b489553226c5c22900d06e780f90dba80b602daa6acd8a53dcecf49d58235",
+    "rtl/decoder.v": "bf52fa083e218ce0af458e772a22cf74942ceb3d7035b68a0056b80ed6a3ecbc",
+    "rtl/gpio_mmio.v": "53d0381efdf0b2f73a75bc512778eb0515d547e3bd0f0faf0242601cb5f11c10",
+    "rtl/imm_gen.v": "763b4fa5121bfcb92577f89d4b762c51b95f069b9be2681e89bb6e8fbd33b2c2",
+    "rtl/instruction_rom.v": "4565eae51ed413398fa5c1ddc1355865d5fd2069d47607692aa0925a7e517700",
+    "rtl/regfile.v": "a9d1397cc5a7292212f56bea92267679d8db6e173e03c9b8a2731aee19ae0ed4",
+    "rtl/soc_top.v": "4acedd6d17ecc84c5e975ebf0068b4520c443978a9cd46cce5faa33d79b3b482",
+    "rtl/sync_data_ram.v": "1b053b249d82156859987c6ffdc9414b636d049be3496f2e7533e10c6b0a940e",
+    "rtl/uart_mmio.v": "a08e15bb2b6d9bd1ab8f9811ecb3a7772bb9c35085391e1128c901a29c846a66",
+    "rtl/uart_tx.v": "67ae99f9421d8eda5de197f072c328e996f8a7693a893e29462be6898a118b2a",
+    "sources.f": "6b5aaeb509215e5f17c8dd5767147188e74874097925c998ecd75825d090a77d"
+  },
+  "pds_synthesis_verified": false,
+  "pds_timing_verified": false,
+  "physical_board_verified": false
+}

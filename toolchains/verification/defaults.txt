@@ -1,0 +1,84 @@
+The following options are target specific:
+  --param=riscv-strcmp-inline-limit= 	64
+  --param=riscv-two-source-permutes 	[disabled]
+  -param=vsetvl-strategy=<string> 	optim
+  --print-supported-extensions 		-march=help
+  -mabi=                      		ilp32
+  -madjust-lmul-cost          		[disabled]
+  -malign-data=               		xlen
+  -march=                     		rv32i
+  -march=help                 		[disabled]
+  -mautovec-segment           		[enabled]
+  -mbig-endian                		[disabled]
+  -mbranch-cost=N             		3
+  -mcmodel=                   		medlow
+  -mcpu=PROCESSOR             		
+  -mcsr-check                 		[disabled]
+  -mdiv                       		[disabled]
+  -mexplicit-relocs           		[enabled]
+  -mfdiv                      		[disabled]
+  -mfence-tso                 		[enabled]
+  -minline-atomics            		[enabled]
+  -minline-strcmp             		[enabled]
+  -minline-strlen             		[enabled]
+  -minline-strncmp            		[enabled]
+  -misa-spec=                 		20191213
+  -mlittle-endian             		[enabled]
+  -mmovcc                     		[disabled]
+  -momit-leaf-frame-pointer   		[disabled]
+  -mplt                       		-fplt
+  -mpreferred-stack-boundary= 		0
+  -mrelax                     		[enabled]
+  -mriscv-attribute           		[enabled]
+  -mrvv-max-lmul=<string>     		m1
+  -mrvv-vector-bits=<string>  		scalable
+  -msave-restore              		[disabled]
+  -mscalar-strict-align       		-mstrict-align
+  -mshorten-memrefs           		[enabled]
+  -msmall-data-limit=N        		8
+  -mstack-protector-guard-offset= 	
+  -mstack-protector-guard-reg= 		
+  -mstack-protector-guard=    		global
+  -mstrict-align              		[enabled]
+  -mstringop-strategy=        		auto
+  -mtls-dialect=              		trad
+  -mtune=PROCESSOR            		
+  -mvector-strict-align       		[enabled]
+  -print-supported-extensions 		-march=help
+
+  Supported ABIs (for use with the -mabi= option):
+    ilp32 ilp32d ilp32e ilp32f lp64 lp64d lp64e lp64f
+
+  Known code models (for use with the -mcmodel= option):
+    large medany medlow
+
+  Supported ISA specs (for use with the -misa-spec= option):
+    2.2 20190608 20191213
+
+  Known data alignment choices (for use with the -malign-data= option):
+    natural xlen
+
+  The RVV possible LMUL (-mrvv-max-lmul=):
+    dynamic m1 m2 m4 m8
+
+  The possible RVV vector register lengths:
+    scalable zvl
+
+  Valid arguments to -mstack-protector-guard=:
+    global tls
+
+  Valid arguments to -mstringop-strategy=:
+    auto libcall scalar vector
+
+  The possible TLS dialects:
+    desc trad
+
+  Valid arguments to -param=vsetvl-strategy=:
+    optim optim-no-fusion simple
+
+  Known valid arguments for -mcpu= option:
+    sifive-e20 sifive-e21 sifive-e24 sifive-e31 sifive-e34 sifive-e76 sifive-s21 sifive-s51 sifive-s54 sifive-s76 sifive-u54 sifive-u74 sifive-x280 sifive-p450 sifive-p670 thead-c906 tt-ascalon-d8 xiangshan-nanhu
+
+  Known valid arguments for -mtune= option:
+    rocket sifive-3-series sifive-5-series sifive-7-series sifive-p400-series sifive-p600-series tt-ascalon-d8 thead-c906 xiangshan-nanhu generic-ooo size sifive-e20 sifive-e21 sifive-e24 sifive-e31 sifive-e34 sifive-e76 sifive-s21 sifive-s51 sifive-s54 sifive-s76 sifive-u54 sifive-u74 sifive-x280 sifive-p450 sifive-p670
+

@@ -1,0 +1,22 @@
+{
+  "status": "verified",
+  "compiler": "GCC 15.2.0",
+  "target": "riscv32-unknown-elf",
+  "host": "macOS arm64",
+  "default_arch": "rv32i",
+  "default_abi": "ilp32",
+  "binutils": "2.45",
+  "newlib": "4.5.0.20241231",
+  "checks": [
+    "fresh interactive login shell finds GCC",
+    "real GCC target triple",
+    "ELF32 RISC-V",
+    "RV32I attributes and instruction mnemonics",
+    "Newlib C headers and memcpy link",
+    "libgcc software multiplication/division/remainder link",
+    "no unresolved symbols",
+    "verification still passes after temporary build volume removed"
+  ],
+  "verification_log": "verification/verification.log",
+  "shell_profile": "/Users/wuleyan/.zprofile"
+}

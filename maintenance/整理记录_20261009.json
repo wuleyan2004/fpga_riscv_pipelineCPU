@@ -1,0 +1,955 @@
+{
+  "date": "2026-10-09",
+  "moves": [
+    {
+      "from": "board_coremark_performance_uart20ms",
+      "to": "工程/02_CoreMark性能测试_已上板"
+    },
+    {
+      "from": "board_coremark_validation_uart20ms",
+      "to": "工程/03_CoreMark验证测试_已上板"
+    },
+    {
+      "from": "board_c_diagnostic",
+      "to": "工程/04_最小C启动诊断_已上板"
+    },
+    {
+      "from": "board_pipeline",
+      "to": "工程/01_RV32I三级流水线开发工程/reference/汇编上板原始版本"
+    },
+    {
+      "from": "board_pipeline_1",
+      "to": "工程/01_RV32I三级流水线开发工程/reference/最小C原始上板版本"
+    },
+    {
+      "from": "源代码",
+      "to": "工程/01_RV32I三级流水线开发工程/rtl"
+    },
+    {
+      "from": "software",
+      "to": "工程/01_RV32I三级流水线开发工程/software"
+    },
+    {
+      "from": "tests",
+      "to": "工程/01_RV32I三级流水线开发工程/tests"
+    },
+    {
+      "from": "build",
+      "to": "工程/01_RV32I三级流水线开发工程/build"
+    },
+    {
+      "from": "toolchains",
+      "to": "工程/01_RV32I三级流水线开发工程/toolchains"
+    },
+    {
+      "from": "board_sources.f",
+      "to": "工程/01_RV32I三级流水线开发工程/board_sources.f"
+    },
+    {
+      "from": "board_top.fdc",
+      "to": "工程/01_RV32I三级流水线开发工程/board_top.fdc"
+    },
+    {
+      "from": "board_demo.S",
+      "to": "工程/01_RV32I三级流水线开发工程/board_demo.S"
+    },
+    {
+      "from": "program.hex",
+      "to": "工程/01_RV32I三级流水线开发工程/program.hex"
+    },
+    {
+      "from": "上板测试说明.md",
+      "to": "工程/01_RV32I三级流水线开发工程/上板测试说明.md"
+    },
+    {
+      "from": "题目",
+      "to": "资料/01_赛题"
+    },
+    {
+      "from": "原理图和远程实验室说明书",
+      "to": "资料/02_开发板与远程实验室"
+    },
+    {
+      "from": "学习规划",
+      "to": "资料/03_学习规划"
+    },
+    {
+      "from": "ppt示意",
+      "to": "资料/04_CPU与SoC讲解PPT"
+    },
+    {
+      "from": ".codex-build/build_cpu_diagram.mjs",
+      "to": "资料/04_CPU与SoC讲解PPT/制作源码/build_cpu_diagram.mjs"
+    },
+    {
+      "from": ".codex-build/mem_timing/build.mjs",
+      "to": "资料/04_CPU与SoC讲解PPT/制作源码/build_mem_timing.mjs"
+    }
+  ],
+  "deleted": [
+    {
+      "path": ".codex-build",
+      "bytes": 747941,
+      "reason": "PPT 中间稿、渲染预览和校验缓存；定稿和制作脚本已保留"
+    },
+    {
+      "path": "board_coremark_performance",
+      "bytes": 1965261,
+      "reason": "已由通过实物测试的慢速串口性能工程替代；历史清单已归档"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/tests/results",
+      "bytes": 164885105,
+      "reason": "历史测试报告已压缩保留；旧波形、仿真程序和临时向量可重新生成"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/tests/__pycache__",
+      "bytes": 37407,
+      "reason": "Python 字节码缓存"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-runtime-check",
+      "bytes": 18501,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/.DS_Store",
+      "bytes": 8196,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-c-diagnostic-20261007-102940",
+      "bytes": 441977,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-pipeline-20261007-092522-401878",
+      "bytes": 392525,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-c-diagnostic-20261007-102341",
+      "bytes": 224818,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-coremark-20261007-110238",
+      "bytes": 4776865,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-coremark-uart-20261007-114845",
+      "bytes": 5732823,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/sections.txt",
+      "bytes": 759,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/exported-board-c.vvp",
+      "bytes": 144582,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/objdump.log",
+      "bytes": 915,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/board-c.log",
+      "bytes": 1498,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/board-c.vvp",
+      "bytes": 148668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/gcc.log",
+      "bytes": 126,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/objcopy.log",
+      "bytes": 240,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/text.bin",
+      "bytes": 392,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/exported-board-c.log",
+      "bytes": 2115,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/data.bin",
+      "bytes": 24,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/c-demo/nm.log",
+      "bytes": 704,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-pipeline-20261006-134057-890198",
+      "bytes": 312169,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-coremark-20261007-100058",
+      "bytes": 3216799,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-coremark-uart-20261007-112845",
+      "bytes": 5733021,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_portme.o",
+      "bytes": 3836,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_main.o",
+      "bytes": 9344,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/sections.txt",
+      "bytes": 1853,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/measure.ld",
+      "bytes": 3095,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/uart.txt",
+      "bytes": 1560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/objdump.log",
+      "bytes": 2025,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/file.simulation.log",
+      "bytes": 606,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/file.vvp",
+      "bytes": 115276,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/gcc.log",
+      "bytes": 626,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/objcopy.log",
+      "bytes": 284,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/file.uart.txt",
+      "bytes": 1560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/text.bin",
+      "bytes": 26432,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/data.bin",
+      "bytes": 3140,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/ee_printf.o",
+      "bytes": 9416,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-1/nm.log",
+      "bytes": 2245,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/package.vvp",
+      "bytes": 4294185,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_portme.o",
+      "bytes": 3832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_main.o",
+      "bytes": 9344,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/sections.txt",
+      "bytes": 1853,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/uart.txt",
+      "bytes": 54,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/objdump.log",
+      "bytes": 2025,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/file.simulation.log",
+      "bytes": 719,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/file.vvp",
+      "bytes": 1486515,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/gcc.log",
+      "bytes": 626,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/package.simulation.log",
+      "bytes": 719,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/objcopy.log",
+      "bytes": 284,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/package.uart.txt",
+      "bytes": 54,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/file.uart.txt",
+      "bytes": 54,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/text.bin",
+      "bytes": 26412,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/data.bin",
+      "bytes": 3136,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/ee_printf.o",
+      "bytes": 9380,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0/nm.log",
+      "bytes": 2245,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_portme.o",
+      "bytes": 3848,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_main.o",
+      "bytes": 9344,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/sections.txt",
+      "bytes": 1852,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/uart.txt",
+      "bytes": 1556,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/objdump.log",
+      "bytes": 2023,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/file.simulation.log",
+      "bytes": 608,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/file.vvp",
+      "bytes": 115276,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/gcc.log",
+      "bytes": 623,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/objcopy.log",
+      "bytes": 282,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/file.uart.txt",
+      "bytes": 1556,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/text.bin",
+      "bytes": 26432,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/data.bin",
+      "bytes": 3148,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/ee_printf.o",
+      "bytes": 9416,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-1/nm.log",
+      "bytes": 2244,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/package.vvp",
+      "bytes": 4294176,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_portme.o",
+      "bytes": 3840,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_main.o",
+      "bytes": 9344,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/sections.txt",
+      "bytes": 1852,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/uart.txt",
+      "bytes": 54,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/objdump.log",
+      "bytes": 2023,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/gcc.log",
+      "bytes": 623,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/package.simulation.log",
+      "bytes": 773,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/objcopy.log",
+      "bytes": 282,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/package.uart.txt",
+      "bytes": 54,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/text.bin",
+      "bytes": 26412,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/data.bin",
+      "bytes": 3144,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/ee_printf.o",
+      "bytes": 9380,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0/nm.log",
+      "bytes": 2244,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_portme.o",
+      "bytes": 3840,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_main.o",
+      "bytes": 9376,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/sections.txt",
+      "bytes": 1861,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/objdump.log",
+      "bytes": 2041,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/gcc.log",
+      "bytes": 675,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/objcopy.log",
+      "bytes": 300,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/text.bin",
+      "bytes": 26464,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/data.bin",
+      "bytes": 3176,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/ee_printf.o",
+      "bytes": 9484,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-validation-0-uart20ms/nm.log",
+      "bytes": 2253,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/layout.c",
+      "bytes": 153,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_portme.o",
+      "bytes": 3832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_main.o",
+      "bytes": 9380,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/sections.txt",
+      "bytes": 1862,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/objdump.log",
+      "bytes": 2043,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/layout.o",
+      "bytes": 832,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_matrix.o",
+      "bytes": 5336,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/gcc.log",
+      "bytes": 678,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/cvt.o",
+      "bytes": 3668,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_util.o",
+      "bytes": 5560,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/objcopy.log",
+      "bytes": 302,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/text.bin",
+      "bytes": 26464,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/layout.bin",
+      "bytes": 12,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_state.o",
+      "bytes": 4348,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/core_list_join.o",
+      "bytes": 5268,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/data.bin",
+      "bytes": 3168,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/ee_printf.o",
+      "bytes": 9484,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/coremark-performance-0-uart20ms/nm.log",
+      "bytes": 2254,
+      "reason": "可再生的编译对象、仿真程序、临时源码或已归档日志"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/build/board-c-diagnostic-20261007-102848",
+      "bytes": 397076,
+      "reason": "旧导出包或临时构建目录；成功上板工程与历史报告已单独保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/downloads/newlib-4.5.0.20241231.tar.gz",
+      "bytes": 9081514,
+      "reason": "已安装并验证的工具链下载缓存；下载 URL 和官方校验值保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/downloads/binutils-2.45-mirror.tar.xz",
+      "bytes": 27868232,
+      "reason": "已安装并验证的工具链下载缓存；下载 URL 和官方校验值保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/downloads/gcc-15.2.0.tar.xz",
+      "bytes": 101056276,
+      "reason": "已安装并验证的工具链下载缓存；下载 URL 和官方校验值保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/downloads/riscv-gnu-toolchain-2026.08.27.tar.gz",
+      "bytes": 1932575,
+      "reason": "已安装并验证的工具链下载缓存；下载 URL 和官方校验值保留"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/gcc-build.log",
+      "bytes": 14762353,
+      "reason": "完整构建日志已压缩保存至 maintenance"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/toolchains/binutils-build.log",
+      "bytes": 283498,
+      "reason": "完整构建日志已压缩保存至 maintenance"
+    },
+    {
+      "path": ".DS_Store",
+      "bytes": 14340,
+      "reason": "Finder 目录显示缓存"
+    },
+    {
+      "path": "资料/03_学习规划/.DS_Store",
+      "bytes": 6148,
+      "reason": "Finder 目录显示缓存"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/rtl/.DS_Store",
+      "bytes": 6148,
+      "reason": "Finder 目录显示缓存"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/reference/汇编上板原始版本/.DS_Store",
+      "bytes": 6148,
+      "reason": "Finder 目录显示缓存"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/reference/最小C原始上板版本/.DS_Store",
+      "bytes": 6148,
+      "reason": "Finder 目录显示缓存"
+    },
+    {
+      "path": "工程/01_RV32I三级流水线开发工程/reference/最小C原始上板版本/software/.DS_Store",
+      "bytes": 6148,
+      "reason": "Finder 目录显示缓存"
+    }
+  ],
+  "edited_paths": [
+    "工程/01_RV32I三级流水线开发工程/software/build_c_demo.py",
+    "工程/01_RV32I三级流水线开发工程/software/build_coremark.py",
+    "工程/01_RV32I三级流水线开发工程/software/runtime/README.md",
+    "工程/01_RV32I三级流水线开发工程/tests/run_gpio_test.py",
+    "工程/01_RV32I三级流水线开发工程/tests/run_pipeline_upper_test.py",
+    "工程/01_RV32I三级流水线开发工程/tests/run_pipeline_mem_test.py",
+    "工程/01_RV32I三级流水线开发工程/tests/prepare_coremark_board.py",
+    "工程/01_RV32I三级流水线开发工程/tests/run_uart_test.py",
+    "工程/01_RV32I三级流水线开发工程/tests/prepare_c_diagnostic.py",
+    "工程/01_RV32I三级流水线开发工程/tests/run_c_runtime_test.py",
+    "工程/01_RV32I三级流水线开发工程/tests/README.md",
+    "工程/01_RV32I三级流水线开发工程/tests/run_pipeline_forward_test.py",
+    "工程/01_RV32I三级流水线开发工程/board_sources.f"
+  ],
+  "checks": [
+    "三份成功上板目录和原始 ZIP 的 SHA-256 一致",
+    "开发工程全部 Verilog 原文保持不变",
+    "开发工程及三份上板工程引脚约束一致",
+    "四份工程各自14个Verilog文件存在，Verilog-2005编译通过",
+    "成功上板工程的原始manifest文件哈希全部保持一致",
+    "Bash和zsh在LC_ALL=C下可加载移动后的工具链",
+    "GCC15.2目标、ELF32、Newlib和软件乘除法链接验证通过",
+    "前递测试：直接RAM和延迟RAM均通过，RAW气泡为0",
+    "最小C运行环境：数据复制、BSS清零、常量、栈、函数调用和复位重跑通过",
+    "最小C诊断导出：正常初值、全零RAM故障、复位重跑、UART探针通过",
+    "PPT制作脚本语法和artifact-tool依赖导入通过"
+  ],
+  "deleted_bytes": 355045178,
+  "compatibility_links": {
+    "toolchains": "/Users/wuleyan/Desktop/FPGA大赛/工程/01_RV32I三级流水线开发工程/toolchains",
+    "PPT node_modules": "Codex bundled node/node_modules"
+  },
+  "postcheck_artifacts": "日志归档至maintenance/整理后检查证据_20261009.zip；临时检查产物已清理"
+}

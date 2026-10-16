@@ -1,0 +1,30 @@
+[
+  {
+    "file": "gcc-15.2.0.tar.xz",
+    "source": "https://gcc.gnu.org/pub/gcc/releases/gcc-15.2.0/gcc-15.2.0.tar.xz",
+    "bytes": 101056276,
+    "sha512": "89047a2e07bd9da265b507b516ed3635adb17491c7f4f67cf090f0bd5b3fc7f2ee6e4cc4008beef7ca884b6b71dffe2bb652b21f01a702e17b468cca2d10b2de",
+    "official_checksum_file": "gcc-15.2.0-sha512.sum"
+  },
+  {
+    "file": "binutils-2.45-mirror.tar.xz",
+    "source": "https://mirrors.tuna.tsinghua.edu.cn/gnu/binutils/binutils-2.45.tar.xz",
+    "bytes": 27868232,
+    "sha512": "c7b10a7466d9fd398d7a0b3f2a43318432668d714f2ec70069a31bdc93c86d28e0fe83792195727167743707fbae45337c0873a0786416db53bbf22860c16ce7",
+    "official_checksum_file": "binutils-sha512.sum"
+  },
+  {
+    "file": "newlib-4.5.0.20241231.tar.gz",
+    "source": "https://sourceware.org/pub/newlib/newlib-4.5.0.20241231.tar.gz",
+    "bytes": 9081514,
+    "sha512": "d391ea3ac68ddb722909ef790f81ba4d6c35d9b2e0fcdb029f91a6c47db9ee94a686a2bdff211fb84025e1a317e257acfa59abda3fd2bc6609966798e1c604dc",
+    "official_checksum_file": null
+  },
+  {
+    "file": "riscv-gnu-toolchain-2026.08.27.tar.gz",
+    "source": "https://github.com/riscv-collab/riscv-gnu-toolchain/archive/refs/tags/2026.08.27.tar.gz",
+    "bytes": 1932575,
+    "sha512": "4fb2aa8aa3971359e8edecf0da7b929eabd24eb23d170ea4293e08a6c536c5a8b5f3bd774adc96cf40ca2ee63613bedead216994fe82ae64c0380fdfb6fab614",
+    "official_checksum_file": null
+  }
+]

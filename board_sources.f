@@ -1,0 +1,16 @@
+rtl/cpu/alu.v
+rtl/cpu/branch_compare.v
+rtl/cpu/csr_file.v
+rtl/cpu/decoder.v
+rtl/cpu/imm_gen.v
+rtl/cpu/regfile.v
+rtl/cpu/cpu_core_pipeline.v
+rtl/instruction_rom.v
+rtl/sync_data_ram.v
+rtl/gpio_mmio.v
+rtl/uart_tx.v
+rtl/uart_mmio.v
+rtl/timer_mmio.v
+rtl/perf_counter_mmio.v
+rtl/soc_top.v
+rtl/board_top.v

@@ -1,0 +1,13 @@
+riscv32-unknown-elf
+15.2.0
+riscv32-unknown-elf-gcc () 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+/Users/wuleyan/Desktop/FPGA大赛/toolchains/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/15.2.0/libgcc.a
+/Users/wuleyan/Desktop/FPGA大赛/toolchains/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/15.2.0/../../../../riscv32-unknown-elf/lib/libc.a
+PASS: true riscv32-unknown-elf target, ELF32 RV32I, C headers,
+      Newlib memcpy, software multiply/divide, no unresolved symbols.
+   text	   data	    bss	    dec	    hex	filename
+    684	      0	      0	    684	    2ac	probe.elf

@@ -1,0 +1,5 @@
+build/
+tests/results/
+toolchains/riscv32-unknown-elf/
+**/__pycache__/
+.DS_Store

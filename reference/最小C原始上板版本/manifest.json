@@ -1,0 +1,96 @@
+{
+  "date": "20261007-092522-401878",
+  "checks_passed": true,
+  "checks": [
+    {
+      "name": "board_c",
+      "passed": true
+    },
+    {
+      "name": "tb_board_inputs",
+      "passed": true
+    },
+    {
+      "name": "tb_board_demo",
+      "passed": true
+    },
+    {
+      "name": "tb_board_rom_consistency",
+      "passed": true
+    },
+    {
+      "name": "pipeline_forward",
+      "passed": true
+    },
+    {
+      "name": "exported_board_c",
+      "passed": true
+    }
+  ],
+  "top": "board_top",
+  "clock_mhz": 27,
+  "source_sha256": {
+    "源代码/cpu/alu.v": "2b33e4fd36d7b65ca34eae1f5f6423bd7d0b156910b1cabafecd8dbe380d35d1",
+    "源代码/cpu/branch_compare.v": "8534d0d6a7550caaa8ff051f0accd8fae74b328f817ed235b828ea8dd9eda7b2",
+    "源代码/cpu/decoder.v": "bf52fa083e218ce0af458e772a22cf74942ceb3d7035b68a0056b80ed6a3ecbc",
+    "源代码/cpu/imm_gen.v": "763b4fa5121bfcb92577f89d4b762c51b95f069b9be2681e89bb6e8fbd33b2c2",
+    "源代码/cpu/regfile.v": "a9d1397cc5a7292212f56bea92267679d8db6e173e03c9b8a2731aee19ae0ed4",
+    "源代码/cpu/cpu_core_pipeline.v": "4f6b489553226c5c22900d06e780f90dba80b602daa6acd8a53dcecf49d58235",
+    "源代码/instruction_rom.v": "08832350e009b019a5086ef237d5c51174becafedf2c22bff3e828cc9529d015",
+    "源代码/sync_data_ram.v": "7e103a663e5e7655508cf6abecaa2321cd7f913a6b9f12a9e35af0638b4b5e9d",
+    "源代码/gpio_mmio.v": "53d0381efdf0b2f73a75bc512778eb0515d547e3bd0f0faf0242601cb5f11c10",
+    "源代码/uart_tx.v": "67ae99f9421d8eda5de197f072c328e996f8a7693a893e29462be6898a118b2a",
+    "源代码/uart_mmio.v": "a08e15bb2b6d9bd1ab8f9811ecb3a7772bb9c35085391e1128c901a29c846a66",
+    "源代码/soc_top.v": "36316a7ef521d50b49ca734c0f6934a2df753cf2252e2be50ea2ae61069cb02d",
+    "源代码/board_top.v": "35cc692aa7f376c19ec20de43627d7da238fc18962c484cc8ba72dacb2cee212",
+    "board_top.fdc": "69c7840e432881ae3b88e2e86e4ce7ed62e322c5e0524d5b5be8d7f8a05b3a1a",
+    "上板测试说明.md": "0edff1458cf01f6ba72a30cc63566301880632c82c1b4b9b37619d662dc881fd",
+    "board_sources.f": "a67ba337717cc5e94f2d966051115853a2bcba8d2e992f2e8d26048cd1423a11",
+    "program.hex": "925ab952f2f1980f2b386fc08a2e0ea1b38ae7d4a5078498bfdcdae1cd8bc188",
+    "board_demo.S": "6f6805fa24037e5de73a65c79490b01c82f732017556f592ba8899279e58454d",
+    "software/c_demo/main.c": "21cf5919600d7f8d5dda617be73f17f312090014efd03d2d8d836b433efed2e4",
+    "software/runtime/start.S": "9248c718965cfae8ed300ebb907f5027fabce5d23ea9968244e6c27a23397504",
+    "software/runtime/link.ld": "c8cc2c1a6c8733251b814515288121bb7a0346a8ae7fbdcf7f9357b87a3c8255",
+    "software/runtime/README.md": "c05cea72be98fcc845962fb00146d1d3b1fd8738f2bdeed77d4d89eeb1943658",
+    "build/c-demo/main.elf": "cd2cb551462b3d8bca2a97b2ee939b20e2d50ccac79f1a2de1edfb768878610d",
+    "build/c-demo/main.map": "aa2cb3bc371c68453a6ba4de4c9c6c271e8d62180cd40d9f32b652f867f37092",
+    "build/c-demo/main.dis": "e3459cc6fae9629fff705de89b3d224d841a2f596d5f56dbd327f434bdce3c2c",
+    "build/c-demo/c_program.hex": "00a05ccdd8f2a3a6c93214fde3503cf5f61116aa06415b7d83b2af9fda0dc9f4",
+    "build/c-demo/c_data.hex": "6d4366e7700fe27ed81835be14dd0805665094a718fddedc0a997db9218532a5",
+    "build/c-demo/metadata.json": "da1134c9442f8f651bf77c9e101af517b41e34368e8efe1456512a45c6a51bcc",
+    "software/build_c_demo.py": "5fccf6f55d3d6df3eb11e4868b12096963ac2bdb60696fb1d7a9a65de1880d75",
+    "tests/run_board_c_test.py": "30125cdc93c403d0acaffb0a30cf1483556da3afa8b10a40d21319a5bff25126",
+    "tests/tb_board_c.sv": "e84d05887cf2cef13c72a528454c8cc8a807a36c8b56ffb2bd044db15c4a3a11"
+  },
+  "package_sha256": {
+    "README.md": "0edff1458cf01f6ba72a30cc63566301880632c82c1b4b9b37619d662dc881fd",
+    "board_top.fdc": "69c7840e432881ae3b88e2e86e4ce7ed62e322c5e0524d5b5be8d7f8a05b3a1a",
+    "rtl/alu.v": "2b33e4fd36d7b65ca34eae1f5f6423bd7d0b156910b1cabafecd8dbe380d35d1",
+    "rtl/board_top.v": "35cc692aa7f376c19ec20de43627d7da238fc18962c484cc8ba72dacb2cee212",
+    "rtl/branch_compare.v": "8534d0d6a7550caaa8ff051f0accd8fae74b328f817ed235b828ea8dd9eda7b2",
+    "rtl/cpu_core_pipeline.v": "4f6b489553226c5c22900d06e780f90dba80b602daa6acd8a53dcecf49d58235",
+    "rtl/decoder.v": "bf52fa083e218ce0af458e772a22cf74942ceb3d7035b68a0056b80ed6a3ecbc",
+    "rtl/gpio_mmio.v": "53d0381efdf0b2f73a75bc512778eb0515d547e3bd0f0faf0242601cb5f11c10",
+    "rtl/imm_gen.v": "763b4fa5121bfcb92577f89d4b762c51b95f069b9be2681e89bb6e8fbd33b2c2",
+    "rtl/instruction_rom.v": "08832350e009b019a5086ef237d5c51174becafedf2c22bff3e828cc9529d015",
+    "rtl/regfile.v": "a9d1397cc5a7292212f56bea92267679d8db6e173e03c9b8a2731aee19ae0ed4",
+    "rtl/soc_top.v": "36316a7ef521d50b49ca734c0f6934a2df753cf2252e2be50ea2ae61069cb02d",
+    "rtl/sync_data_ram.v": "7e103a663e5e7655508cf6abecaa2321cd7f913a6b9f12a9e35af0638b4b5e9d",
+    "rtl/uart_mmio.v": "a08e15bb2b6d9bd1ab8f9811ecb3a7772bb9c35085391e1128c901a29c846a66",
+    "rtl/uart_tx.v": "67ae99f9421d8eda5de197f072c328e996f8a7693a893e29462be6898a118b2a",
+    "software/c_demo/main.c": "21cf5919600d7f8d5dda617be73f17f312090014efd03d2d8d836b433efed2e4",
+    "software/images/c_data.hex": "6d4366e7700fe27ed81835be14dd0805665094a718fddedc0a997db9218532a5",
+    "software/images/c_program.hex": "00a05ccdd8f2a3a6c93214fde3503cf5f61116aa06415b7d83b2af9fda0dc9f4",
+    "software/images/main.dis": "e3459cc6fae9629fff705de89b3d224d841a2f596d5f56dbd327f434bdce3c2c",
+    "software/images/main.elf": "cd2cb551462b3d8bca2a97b2ee939b20e2d50ccac79f1a2de1edfb768878610d",
+    "software/images/main.map": "aa2cb3bc371c68453a6ba4de4c9c6c271e8d62180cd40d9f32b652f867f37092",
+    "software/images/metadata.json": "da1134c9442f8f651bf77c9e101af517b41e34368e8efe1456512a45c6a51bcc",
+    "software/runtime/README.md": "c05cea72be98fcc845962fb00146d1d3b1fd8738f2bdeed77d4d89eeb1943658",
+    "software/runtime/link.ld": "c8cc2c1a6c8733251b814515288121bb7a0346a8ae7fbdcf7f9357b87a3c8255",
+    "software/runtime/start.S": "9248c718965cfae8ed300ebb907f5027fabce5d23ea9968244e6c27a23397504",
+    "sources.f": "6b5aaeb509215e5f17c8dd5767147188e74874097925c998ecd75825d090a77d"
+  },
+  "pds_synthesis_verified": false,
+  "pds_timing_verified": false,
+  "physical_board_verified": false
+}

@@ -1,0 +1,110 @@
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+ .comment       0x00000000       0x10 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+ .note.GNU-stack
+                0x00000000        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+IROM             0x00000000         0x00000400         xr
+RAM              0x00000000         0x00000400         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+LOAD /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+LOAD /Users/wuleyan/Desktop/FPGA大赛/toolchains/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/15.2.0/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /Users/wuleyan/Desktop/FPGA大赛/toolchains/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/15.2.0/libgcc.a
+                0x00000100                        __stack_size = DEFINED (__stack_size)?__stack_size:0x100
+                0x00000400                        __stack_top = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000300                        __stack_bottom = (__stack_top - __stack_size)
+
+.text           0x00000000      0x188
+ *(.text.startup.entry)
+ .text.startup.entry
+                0x00000000       0x78 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+                0x00000000                _start
+                0x00000074                __boot_halt
+ *(.text .text.*)
+ .text          0x00000078        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+ .text          0x00000078       0x24 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+ .text.startup  0x0000009c       0xec /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+                0x0000009c                main
+                0x00000188                        . = ALIGN (0x4)
+                0x00000188                        __text_end = .
+
+.rela.dyn       0x00000188        0x0
+ .rela.text.startup.entry
+                0x00000188        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+
+.data           0x00000000       0x18 load address 0x00000190
+                0x00000000                        __data_start = .
+ *(.rodata .rodata.* .srodata .srodata.*)
+ .rodata        0x00000000        0x9 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+                0x00000000                success_message
+ *fill*         0x00000009        0x3 
+ .srodata       0x0000000c        0x8 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+                0x0000000c                failure_message
+ *(.data .data.* .sdata .sdata.*)
+ .data          0x00000014        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+ .data          0x00000014        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+ .sdata         0x00000014        0x4 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+                0x00000014                initialized
+ *(.got .got.*)
+                0x00000018                        . = ALIGN (0x4)
+                0x00000018                        __data_end = .
+                0x00000800                        __global_pointer$ = (__data_start + 0x800)
+
+.bss            0x00000018        0x8
+                0x00000018                        . = ALIGN (0x4)
+                0x00000018                        __bss_start = .
+ *(.bss .bss.* .sbss .sbss.*)
+ .bss           0x00000018        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+ .bss           0x00000018        0x0 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+ .sbss          0x00000018        0x8 /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o
+                0x00000018                visits
+                0x0000001c                result
+ *(COMMON)
+                0x00000020                        . = ALIGN (0x4)
+                0x00000020                        __bss_end = .
+                0x00000190                        __data_load_start = ALIGN (MAX (__text_end, __bss_end), 0x10)
+                0x000001a8                        __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.ram_init       0x00000190       0x18
+                0x000001a8                        . = (. + SIZEOF (.data))
+ *fill*         0x00000190       0x18 
+                0x000001b0                        __heap_start = ALIGN (__data_load_end, 0x10)
+                0x00000300                        __heap_end = __stack_bottom
+                0x000001b0                        _end = __heap_start
+                0x000001b0                        end = _end
+
+.stack          0x00000300      0x100
+                0x00000400                        . = (. + __stack_size)
+ *fill*         0x00000300      0x100 
+
+.unsupported
+ *(.preinit_array .preinit_array.* .init_array .init_array.*)
+ *(.fini_array .fini_array.* .ctors .ctors.* .dtors .dtors.*)
+ *(.tdata .tdata.* .tbss .tbss.*)
+
+/DISCARD/
+ *(.comment .note .note.* .eh_frame .eh_frame.* .eh_frame_hdr)
+                0x00000001                        ASSERT ((_start == ORIGIN (IROM)), _start must be at reset address 0)
+                0x00000001                        ASSERT (((__stack_size > 0x0) && ((__stack_size & 0xf) == 0x0)), stack size must be a positive multiple of 16)
+                0x00000001                        ASSERT (((__stack_top & 0xf) == 0x0), stack top must be 16-byte aligned)
+                0x00000001                        ASSERT ((__stack_size <= LENGTH (RAM)), stack exceeds RAM capacity)
+                0x00000001                        ASSERT ((__data_load_end <= __stack_bottom), RAM too small: runtime data + initial copy + reserved stack)
+                0x00000001                        ASSERT ((SIZEOF (.unsupported) == 0x0), this startup does not support constructors or TLS)
+OUTPUT(/Users/wuleyan/Desktop/FPGA大赛/build/c-demo/main.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x1c
+ .riscv.attributes
+                0x00000000       0x1a /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccsvPldc.o
+ .riscv.attributes
+                0x0000001a       0x1c /var/folders/05/yhwc5ph964ndw0rc671653kr0000gn/T//ccXWcn30.o

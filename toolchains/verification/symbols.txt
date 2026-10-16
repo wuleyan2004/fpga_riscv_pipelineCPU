@@ -1,0 +1,16 @@
+000012ac T __BSS_END__
+000012ac T __DATA_BEGIN__
+000012ac T __SDATA_BEGIN__
+000012ac T __bss_start
+000001f8 T __divsi3
+00001aac A __global_pointer$
+00000200 T __hidden___udivsi3
+0000027c T __modsi3
+000001d4 T __mulsi3
+00000200 T __udivsi3
+00000248 T __umodsi3
+000012ac T _edata
+000012ac T _end
+00000000 T arithmetic_probe
+000000ac T memcpy
+00000060 T toolchain_probe
