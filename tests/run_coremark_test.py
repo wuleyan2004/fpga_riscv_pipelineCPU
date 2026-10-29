@@ -77,7 +77,7 @@ for block in blocks[:boots]:
         if not (values["Profile cycles"] > values["Retired instructions"] > 0
                 and values["Memory wait cycles"] > 0
                 and values["Taken branches"] > 0
-                and values["Branch bubble cycles"] == values["Taken branches"]
+                and values["Branch bubble cycles"] <= values["Branch instructions"]
                 and values["Branch instructions"] >= values["Taken branches"]):
             raise SystemExit(f"FAIL inconsistent profile counters: {values}")
 summary = {"passed": True, "run": args.run, "boots": boots, "expected_crc": expected,

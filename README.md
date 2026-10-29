@@ -28,7 +28,7 @@ python3 tests/prepare_coremark_uart_diagnostic.py --run validation
 当前 rtl 的默认内置镜像为 CoreMark 性能诊断版（自动标定、20 ms 串口字符间隔）。
 `build/coremark-performance-0-uart20ms-profile/` 保存对应 ELF、HEX 和编译参数；
 重新生成命令：`python3 software/build_coremark.py --run performance --iterations 0 --uart-gap-ms 20 --profile`。
-建议用 `python3 tests/prepare_coremark_uart_diagnostic.py --run performance --profile` 导出独立上板包，加入包内全部 16 个 .v、约束文件，顶层为 `board_top`。
+建议用 `python3 tests/prepare_coremark_uart_diagnostic.py --run performance --profile` 导出独立上板包，加入包内全部 .v、约束文件，顶层为 `board_top`。
 这份镜像尚须重新执行 PDS 综合、时序检查和实物测试；原已上板包仍是基线。
 修改后新包存于 build/，请核对包内 README 和 manifest，不要直接覆盖已经验证的工程。
 
@@ -55,7 +55,7 @@ tests/README.md 区分了已适配流水线的套件和早期单周期套件。
 | 0x10000040 | RAW wait cycles | 访存未阻塞时，因数据相关而停顿的周期 |
 | 0x10000044 | Branch instructions | 实际执行的条件分支数 |
 | 0x10000048 | Taken branches | 条件成立的分支数 |
-| 0x1000004c | Branch bubble cycles | 分支重定向造成的空拍数，当前流水线每次 1 拍 |
+| 0x1000004c | Branch bubble cycles | 条件分支预测错误造成的空拍数，每次错误 1 拍 |
 | 0x10000050 | Jump bubble cycles | JAL/JALR 重定向造成的空拍数，每次 1 拍 |
 
 以上计数器为 32 位，溢出后回绕；在 27 MHz 下连续计时约 159 秒时 `Profile cycles` 首次回绕。

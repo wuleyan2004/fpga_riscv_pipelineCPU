@@ -14,6 +14,7 @@ module perf_counter_mmio (
     input  wire        raw_wait,
     input  wire        branch,
     input  wire        branch_taken,
+    input  wire        branch_mispredict,
     input  wire        jump
 );
     localparam CTRL         = 32'h1000_0030;
@@ -52,11 +53,9 @@ module perf_counter_mmio (
                 if (mem_wait) mem_wait_q <= mem_wait_q + 32'd1;
                 if (raw_wait) raw_wait_q <= raw_wait_q + 32'd1;
                 if (branch) branches_q <= branches_q + 32'd1;
-                if (branch_taken) begin
-                    taken_q <= taken_q + 32'd1;
-                    // 本流水线每次控制重定向会清空 IF/EX，代价为一个取指空拍。
-                    branch_cost_q <= branch_cost_q + 32'd1;
-                end
+                if (branch_taken) taken_q <= taken_q + 32'd1;
+                // 每次条件分支预测错误会冲刷 IF/EX，产生一个取指空拍。
+                if (branch_mispredict) branch_cost_q <= branch_cost_q + 32'd1;
                 if (jump) jump_cost_q <= jump_cost_q + 32'd1;
             end
             if (response_q) begin

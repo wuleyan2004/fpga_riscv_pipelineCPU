@@ -5,6 +5,8 @@ rtl/cpu/decoder.v
 rtl/cpu/imm_gen.v
 rtl/cpu/regfile.v
 rtl/cpu/cpu_core_pipeline.v
+rtl/cpu/btb.v
+rtl/cpu/bht.v
 rtl/instruction_rom.v
 rtl/sync_data_ram.v
 rtl/gpio_mmio.v

@@ -42,7 +42,7 @@ wire [31:0] mem_wdata;
 wire        mem_ready;
 wire [31:0] mem_rdata;
 wire profile_retire, profile_mem_wait, profile_raw_wait;
-wire profile_branch, profile_branch_taken, profile_jump;
+wire profile_branch, profile_branch_taken, profile_branch_mispredict, profile_jump;
 
 wire ram_selected;
 wire gpio_selected;
@@ -112,6 +112,7 @@ cpu_core_pipeline #(.RAM_BYTES(COREMARK_PROGRAM ? 65536 : 1024)) u_cpu_core (
     .profile_raw_wait (profile_raw_wait),
     .profile_branch (profile_branch),
     .profile_branch_taken (profile_branch_taken),
+    .profile_branch_mispredict (profile_branch_mispredict),
     .profile_jump (profile_jump)
 );
 
@@ -178,7 +179,8 @@ perf_counter_mmio u_perf (
     .mem_ready(perf_ready), .mem_rdata(perf_rdata),
     .retire(profile_retire), .mem_wait(profile_mem_wait),
     .raw_wait(profile_raw_wait), .branch(profile_branch),
-    .branch_taken(profile_branch_taken), .jump(profile_jump)
+    .branch_taken(profile_branch_taken),
+    .branch_mispredict(profile_branch_mispredict), .jump(profile_jump)
 );
 
 wire unmapped_selected;

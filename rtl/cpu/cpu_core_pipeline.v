@@ -19,12 +19,14 @@ module cpu_core_pipeline #(
     output wire        profile_raw_wait,
     output wire        profile_branch,
     output wire        profile_branch_taken,
+    output wire        profile_branch_mispredict,
     output wire        profile_jump
 );
 //IF-EX级间寄存器
 reg        if_ex_valid_q;//这条指令是否有效
 reg [31:0] if_ex_pc_q;//这条指令的pc
 reg [31:0] if_ex_instruction_q;//取到的32位指令
+reg [31:0] if_ex_pred_next_pc_q;//这条IF指令当时预测的下一条PC
 //EX-WB级间寄存器
 reg        ex_wb_valid_q;//WB级当前指令是否有效
 reg [31:0] ex_wb_pc_q;//当前指令的pc
@@ -93,6 +95,11 @@ wire [31:0] ex_alu_result;
 wire        ex_branch_equal;
 wire        ex_branch_signed_less;
 wire        ex_branch_unsigned_less;
+//btb输出信号
+wire if_btb_hit;
+wire[31:0] if_btb_target;
+//bht输出信号
+wire if_bht_predict_taken;
 //csr_file相关信号
 wire        csr_exec;
 wire [11:0] ex_csr_addr = if_ex_instruction_q[31:20];
@@ -390,6 +397,46 @@ assign wb_mem_done = mem_ready && (!ex_wb_mem_two_beats_q || ex_wb_mem_second_q)
 //WB级的LS是否完成，如果未完成则流水线必须等待
 wire stall_mem = ex_wb_mem_access_q && !wb_mem_done;
 
+//分支预测
+//分支这拍真正完成
+wire ex_branch_resolved = ex_branch && !reset && !stall_mem && !stall_raw && !ex_instruction_misaligned;
+//计算实际下一条PC
+wire [31:0] ex_branch_actual_next_pc = ex_branch_condition ? ex_branch_target : (if_ex_pc_q + 32'd4);
+//预测的下一条PC与实际的是否相同
+wire ex_branch_mispredict = ex_branch_resolved && (if_ex_pred_next_pc_q != ex_branch_actual_next_pc);
+//BHT写使能
+wire ex_bht_update_en = ex_branch_resolved;
+//BTB写使能
+wire ex_btb_update_en = ex_branch_resolved && ex_branch_condition;
+//IF级计算预测下一条PC
+wire if_predict_taken = if_btb_hit && if_bht_predict_taken;
+wire [31:0] if_predict_next_pc =
+    if_predict_taken ? if_btb_target : (pc + 32'd4);
+
+//bht
+bht u_bht(
+    .clk(clk),
+    .reset(reset),
+    .lookup_pc_i(pc),
+    .predict_taken_o(if_bht_predict_taken),
+    .update_valid_en(ex_bht_update_en),
+    .update_pc_i(if_ex_pc_q),
+    .update_taken_i(ex_branch_condition)
+);
+
+//btb
+btb u_btb(
+    .clk(clk),
+    .reset(reset),
+    .update_valid_en(ex_btb_update_en),
+    .lookup_pc_i(pc),
+    .look_hit_o(if_btb_hit),
+    .predict_target_o(if_btb_target),
+    .update_pc_i(if_ex_pc_q),
+    .update_target_i(ex_branch_target)
+);
+
+
 // CSR 与异常在 EX 级生效；访存和 RAW 停顿期间保持不变。
 assign csr_exec = !reset && if_ex_valid_q && ex_csr_en && !ex_illegal &&
                   !stall_mem && !stall_raw;
@@ -416,6 +463,7 @@ assign profile_mem_wait = !reset && stall_mem;
 assign profile_raw_wait = !reset && !stall_mem && stall_raw;
 assign profile_branch = !reset && !stall_mem && !stall_raw && ex_branch;
 assign profile_branch_taken = profile_branch && ex_branch_condition;
+assign profile_branch_mispredict = ex_branch_mispredict;
 assign profile_jump = !reset && !stall_mem && !stall_raw && (ex_jal || ex_jalr);
 
 always @(posedge clk) begin
@@ -425,6 +473,7 @@ always @(posedge clk) begin
         if_ex_valid_q         <= 1'b0;
         if_ex_pc_q            <= 32'b0;
         if_ex_instruction_q   <= 32'b0;
+        if_ex_pred_next_pc_q  <= 32'b0;
         ex_wb_valid_q         <= 1'b0;
         ex_wb_pc_q            <= 32'b0;
         ex_wb_instruction_q   <= 32'b0;
@@ -450,6 +499,7 @@ always @(posedge clk) begin
         trap_pc_q             <= 32'b0;
         trap_instruction_q    <= 32'b0;
         trap_cause_q          <= 32'b0;
+
     end else if (stall_mem) begin
         debug_misaligned <= 1'b0;
         if (mem_ready && ex_wb_mem_two_beats_q && !ex_wb_mem_second_q) begin
@@ -544,10 +594,12 @@ always @(posedge clk) begin
         ex_wb_mem_addr_low_q  <= 2'b0;
         ex_wb_load_aligned_q  <= 1'b0;
     //需要重新定位下一条指令pc的情况
-    end else if (ex_control_redirect) begin
+    end else if (ex_jal || ex_jalr || ex_branch_mispredict) begin
         debug_misaligned      <= 1'b0;
-        pc                    <= ex_redirect_target;
-        if_ex_valid_q         <= 1'b0;
+        pc <= ex_branch_mispredict
+        ? ex_branch_actual_next_pc
+        : ex_redirect_target;
+        if_ex_valid_q <= 1'b0;
         ex_wb_valid_q         <= if_ex_valid_q;
         ex_wb_pc_q            <= if_ex_pc_q;
         ex_wb_instruction_q   <= if_ex_instruction_q;
@@ -566,10 +618,11 @@ always @(posedge clk) begin
     //一般的正常情况
     end else begin
         debug_misaligned      <= ex_mem_access && !ex_mem_aligned;
-        pc                  <= pc + 32'd4;
+        pc                    <= if_predict_next_pc;
         if_ex_valid_q       <= 1'b1;
         if_ex_pc_q          <= pc;
         if_ex_instruction_q <= instruction;
+        if_ex_pred_next_pc_q <= if_predict_next_pc;
         ex_wb_valid_q       <= if_ex_valid_q;
         ex_wb_pc_q          <= if_ex_pc_q;
         ex_wb_instruction_q <= if_ex_instruction_q;
